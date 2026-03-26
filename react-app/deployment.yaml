@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-app
+  namespace: react-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-app
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: react-app
+    spec:
+      containers:
+      - image: xueromal/react-app:react
+        name: react-app
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+          protocol: TCP
+          name: react-app
