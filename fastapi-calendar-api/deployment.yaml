@@ -17,7 +17,7 @@ spec:
         app: fastapi-app
     spec:
       containers:
-      - image: 192.168.5.115:5000/fastapi-calendar-api:0.1
+      - image: 192.168.5.115:5000/fastapi-calendar-api:0.5
         name: fastapi-app
         resources:
           requests:
