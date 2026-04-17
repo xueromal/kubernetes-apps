@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angular-calendar
+  namespace: angular-calendar
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: angular-calendar
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: angular-calendar
+    spec:
+      containers:
+      - image: xueromal/angular-calendar:latest
+        name: angular-calendar
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+          protocol: TCP
+          name: angular-calendar
