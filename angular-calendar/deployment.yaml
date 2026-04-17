@@ -17,7 +17,7 @@ spec:
         app: angular-calendar
     spec:
       containers:
-      - image: xueromal/angular-calendar:latest
+      - image: 192.168.5.115:5000/angular-calendar:latest
         name: angular-calendar
         resources:
           requests:
