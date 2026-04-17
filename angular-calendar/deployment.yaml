@@ -17,7 +17,7 @@ spec:
         app: angular-calendar
     spec:
       containers:
-      - image: 192.168.5.115:5000/angular-calendar:latest
+      - image: 192.168.5.115:5000/angular-calendar:2.2
         name: angular-calendar
         resources:
           requests:
