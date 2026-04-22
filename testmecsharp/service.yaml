@@ -12,6 +12,3 @@ spec:
       protocol: TCP
       port: 4200
       targetPort: 4200
-  externalIPs:
-    - 192.168.4.102
-  loadBalancerIP: 192.168.0.209
