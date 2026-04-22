@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testmecsharp
+  namespace: testmecsharp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testmecsharp
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: testmecsharp
+    spec:
+      containers:
+      - image: 192.168.5.115:5000/testmecsharp:0.2
+        name: testmecsharp
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+          protocol: TCP
+          name: testmecsharp
